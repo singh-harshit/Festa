@@ -1,7 +1,10 @@
 <?php
-
+// ----Links----
 require 'var.php';
 require 'connect.inc.php';
+
+// ---- Check if the user is logged in ----
+
 if(loggedin())
 {
 	$firstname=getuserfield($con,'first_name');;

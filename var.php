@@ -1,7 +1,12 @@
 <?php
+// ---- Session start in the beginning of file 
 ob_start();
 session_start();
+
+// ---- Current File Address----
 $current_file = $_SERVER['SCRIPT_NAME'];
+
+// ---- File address from which current file is loaded ----
 if(isset($_SERVER['HTTP_REFERER'])&&!empty($_SERVER['HTTP_REFERER']))
 {
 	$http_referer = $_SERVER['HTTP_REFERER'];
@@ -19,6 +24,7 @@ function loggedin(){
 	}
 }
 
+// ---- get data of current logged in user ---- 
 function getuserfield($con,$field)
 {
 	$username =$_SESSION['username'];
