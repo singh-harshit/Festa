@@ -27,9 +27,10 @@ function loggedin(){
 // ---- get data of current logged in user ---- 
 function getuserfield($con,$field)
 {
+	$table = 'loging';
 	$username =$_SESSION['username'];
 	global $con;
-	$query = "SELECT `".mysqli_real_escape_string($con,$field)."` FROM `logging` WHERE `username`= '".mysqli_real_escape_string($con,$username)."'";
+	$query = "SELECT `".mysqli_real_escape_string($con,$field)."` FROM `$table` WHERE `username`= '".mysqli_real_escape_string($con,$username)."'";
 	if($query_run=mysqli_query($con,$query))
 	{
 		$query_row=mysqli_fetch_array($query_run,MYSQLI_ASSOC);
